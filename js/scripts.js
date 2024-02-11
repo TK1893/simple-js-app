@@ -1,4 +1,4 @@
-// alert('Hello world');
+
 // Let zum Speichern / Deklarieren von Variablen
 // let age = 29;
 
@@ -15,7 +15,16 @@
 // let doubleSize = size * 2;
 // document.write(doubleSize);
 
-let size = 100;
-let doubleSize = size * 2;
-let minSize = (doubleSize * 2) - (size / 2);
-document.write(minSize);
+// let size = 100;
+// let doubleSize = size * 2;
+// let minSize = (doubleSize * 2) - (size / 2);
+// document.write(minSize);
+
+alert('Hello World');
+
+let favoriteInternationalFood = 'Pad Thai &';
+let favoriteLocalFood = ' Zwiebelrostbraten';
+document.write(favoriteInternationalFood);
+document.write(favoriteLocalFood);
+
+
