@@ -1,4 +1,3 @@
-// ---- Task Version ------------------------------------------------------------------  Task Version  ----
 
 // 1. Blank array
 let pokemonList = []
@@ -14,4 +13,3 @@ pokemonList = [
 
 // 3. Check
 // document.write(pokemonList[0].ranking, pokemonList[2].height, pokemonList[4].type[1]);
-document.write(pokemonList[4].ranking, pokemonList[4].name);
