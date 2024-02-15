@@ -1,0 +1,124 @@
+* {
+Margin:0
+}
+body {
+    display: block;
+    text-align: center;
+    background-color:#FFCB08;
+    font-family: "Barriecito", system-ui;
+    font-size: 1.2rem;
+    color: #004A94;
+    line-height: 1.5;
+}
+
+.pokemonLogo {
+    width: 95vw;
+}
+main h1 {
+    font-family: "Barriecito", system-ui;
+    color:#FFCB08;
+    font-size: 2.2rem;
+    padding: 2vh 0;
+}
+
+main {
+    background-color: #004A94;
+    margin-bottom: 4vh;
+}
+
+
+header {
+    width: 100vw;;
+    background-color:#FFCB08;
+}
+
+
+@media only all and (min-width: 500px) {
+    .pokemonLogo {
+        width: 60vw;
+    }
+    body {
+        font-size: 2rem;
+    }
+    main h1 {
+        font-size: 3rem;
+    }
+}
+
+@media only all and (min-width: 768px) {
+    .pokemonLogo {
+        width: 65vw;
+    }
+
+    body {
+        font-size: 2.5rem;
+        line-height: 1.7;
+    }
+    main h1 {
+        font-size: 4rem;
+    }
+    
+}
+
+@media only all and (min-width: 1200px) {
+
+    body {
+        font-size: 3.5rem;
+    }
+    main h1 {
+        font-size: 5rem;
+    }
+    
+    @media only all and (min-width: 2000px) {
+        .pokemonLogo {
+            width: 50vw;
+        }
+        body {
+            font-size: 6rem;
+        }
+        main h1 {
+            font-size: 8rem;
+        }
+    }
+}
+
+.page-footer {
+    margin: 3vh 0 0;
+    padding: 50px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.trenner {
+    margin: 2vh 0;
+    border: 1px solid #004A94;
+}
+.social-media p {
+font-size: 1.2rem;
+margin-bottom: 1vh;
+color:#004A94;
+}
+
+.social-media__item {
+text-decoration: none;
+text-align: center;
+padding: 0 3vw;
+}
+    
+.social-media__image {
+width: 30px;
+transition: scale 1s ease;
+
+}
+
+.social-media__image:hover {
+scale: 1.7;
+}
+
+@media all and (max-width: 700px) {
+.page-footer {
+    margin-top: 0;
+}
+}
