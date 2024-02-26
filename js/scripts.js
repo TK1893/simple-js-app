@@ -1,3 +1,5 @@
+// IIFE Wrapping
+let pokemonRepository = (function() {
 
 // 1. Blank array
 let pokemonList = []
@@ -11,15 +13,72 @@ pokemonList = [
   { ranking: 647, name: 'Keldeo', height: 1.4, types: ['Water', 'Fighting'] }
 ];
 
-for (let i=0; i < pokemonList.length; i++){
-  let list = `${pokemonList[i].name} (height: ${pokemonList[i].height} m) <br> `; 
-// Output Pokemon name + height
-  document.write(list);
-// Message "Big Pokemon"" for height >=4 
-  if (pokemonList[i].height >= 4) {
-      document.write(`" WOW - ${pokemonList[i].name} - You are so big !!! " <br>`);
-// Message "Sweet Pokemon"" for height <=1.4  
-    } else if (pokemonList[i].height <= 1.4) {
-    document.write(`" Ooooh - ${pokemonList[i].name} - You are so sweet !!! " <br>`);
+// public function for Array Output
+function getAll () {
+  return pokemonList;
+}
+
+// public function for adding Array item
+function add (pokemon) {
+  pokemonList.push(pokemon);
+}
+
+// Bonus-1 - public function for adding Array item after "object" check
+function addv (pokemon) {
+  if (typeof pokemon == "object") {
+    pokemonList.push(pokemon);
+  } else {
+   console.log("This is not a Pokemon");
   }
 }
+
+// Bonus-2 - public function for adding Array item after full check
+function addXl (pokemon) {
+  let b = Object.keys(pokemon);
+  if (b[0] == 'ranking' && b[1] == 'name' && b[2] == 'height'&& b[3] == 'types' && typeof pokemon=="object") {
+    pokemonList.push(pokemon);
+    console.log("This is a pokemon");
+  } else {
+    console.log("This is not a pokemon");
+  }
+}
+
+// IIFE return object
+return {
+  add: add,
+  getAll: getAll,
+  addv: addv,
+  addXl: addXl
+};
+
+})();
+
+// *************************  forEach() clear Version  ****************************************
+
+function pokemonOutput(item) {
+  // Output Pokemon name + height
+  document.write (`${item.name} (height: ${item.height} m) <br>`);
+
+  if (item.height >= 4) {
+    // Message "Big Pokemon"" for height >= 4 
+    document.write(`" WOW - ${item.name} - You are so big !!! " <br>`);
+    // Message "Sweet Pokemon"" for height <= 1.4  
+   } else if (item.height <= 1.4) {
+    document.write(`" Ooooh - ${item.name} - You are so sweet !!! " <br>`);
+   }
+}
+// pokemonRepository.getAll().forEach(pokemonOutput);
+
+// *************************  check add () function  ****************************************
+
+pokemonRepository.addXl (
+  {
+    ranking: 1022,
+    name: 'Iron Boulder',
+    height: 1.5,
+    types: ['Rock', 'Psychic']
+  }
+);
+pokemonRepository.addXl(23);
+
+pokemonRepository.getAll().forEach(pokemonOutput);
