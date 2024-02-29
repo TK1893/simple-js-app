@@ -19,36 +19,17 @@ function getAll () {
 }
 
 // public function for adding Array item
-function add (pokemon) {
-  pokemonList.push(pokemon);
-}
-
-// Bonus-1 - public function for adding Array item after "object" check
-function addv (pokemon) {
-  if (typeof pokemon == "object") {
-    pokemonList.push(pokemon);
-  } else {
-   console.log("This is not a Pokemon");
-  }
-}
-
-// Bonus-2 - public function for adding Array item after full check
-function addXl (pokemon) {
-  let b = Object.keys(pokemon);
-  if (b[0] == 'ranking' && b[1] == 'name' && b[2] == 'height'&& b[3] == 'types' && typeof pokemon=="object") {
-    pokemonList.push(pokemon);
-    console.log("This is a pokemon");
-  } else {
-    console.log("This is not a pokemon");
-  }
-}
+function add(pokemon) { 
+  if (typeof pokemon === "object" && "ranking" in pokemon && "name" in pokemon && "height" in pokemon && "types" in pokemon) { 
+    pokemonList.push(pokemon); 
+  } else { console.log("Invalid Pokémon."); 
+  } 
+} 
 
 // IIFE return object
 return {
   add: add,
   getAll: getAll,
-  addv: addv,
-  addXl: addXl
 };
 
 })();
@@ -71,7 +52,7 @@ function pokemonOutput(item) {
 
 // *************************  check add () function  ****************************************
 
-pokemonRepository.addXl (
+pokemonRepository.add (
   {
     ranking: 1022,
     name: 'Iron Boulder',
@@ -79,6 +60,6 @@ pokemonRepository.addXl (
     types: ['Rock', 'Psychic']
   }
 );
-pokemonRepository.addXl(23);
+pokemonRepository.add(23);
 
 pokemonRepository.getAll().forEach(pokemonOutput);
