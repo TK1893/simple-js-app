@@ -122,3 +122,26 @@ scale: 1.7;
     margin-top: 0;
 }
 }
+
+ul {
+    padding-left:0;
+    list-style: none;
+}
+/* blau  #004A94 */
+/* gelb  #FFCB08 */
+.poke-Button {
+    background-color: #004A94; 
+    border: none;
+    border-radius: 5%;
+    color: #FFCB08;
+    font-family: "Barriecito", system-ui;
+    font-size: 1.5rem;
+    padding: 7px 10px;
+    margin:10px;
+    cursor: pointer;
+    transition: scale 1s ease;
+}
+
+.poke-Button:hover {
+    scale: 1.5;
+}
