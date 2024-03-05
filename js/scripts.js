@@ -14,52 +14,78 @@ pokemonList = [
 ];
 
 // public function for Array Output
-function getAll () {
+function getAll() {
   return pokemonList;
 }
 
-// public function for adding Array item
-function add(pokemon) { 
-  if (typeof pokemon === "object" && "ranking" in pokemon && "name" in pokemon && "height" in pokemon && "types" in pokemon) { 
-    pokemonList.push(pokemon); 
-  } else { console.log("Invalid Pokémon."); 
-  } 
+// public function for adding Pokemon
+function add(pokemon) {
+  if (
+    typeof pokemon === "object" &&
+    "ranking" in pokemon &&
+    "name" in pokemon &&
+    "height" in pokemon &&
+    "types" in pokemon
+  ) {
+    pokemonList.push(pokemon);
+  } else {
+    console.log("Invalid Pokémon !!!");
+  }
+  if(pokemon.height>=3.8) {
+    console.log(`Wow + ${pokemon.name} - you are really big !!!`)
+  } else if(pokemon.height<=1.5) {
+    console.log(`Oh + ${pokemon.name} - you are soooo sweet !!!`)
+  }
+}
+
+// public function for logging Pokemon Details >> doesn#t work
+function showDetails(pokemon) {
+  console.log(pokemon);
+}
+
+// public function for adding list Pokemon Details
+function addListItem(pokemon) { 
+  let pokeList = document.querySelector('.poke-list');
+  let pokeListItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = pokemon.name;
+  button.classList.add('poke-Button');
+  pokeListItem.appendChild(button);
+  pokeList.appendChild(pokeListItem);
+  button.addEventListener('click', showDetails);
+  // ** Version 1 Eventlistener > works ***************
+  // button.addEventListener('click', function(){
+  //   console.log(pokemon);
+  // });
+  // *****************************************************
 } 
 
 // IIFE return object
 return {
-  add: add,
-  getAll: getAll,
+  add:add,
+  addListItem: addListItem,
+  showDetails:showDetails,
+  getAll: getAll
 };
 
 })();
 
-// *************************  forEach() clear Version  ****************************************
+pokemonRepository.getAll().forEach(pokemonRepository.addListItem);
 
-function pokemonOutput(item) {
-  // Output Pokemon name + height
-  document.write (`${item.name} (height: ${item.height} m) <br>`);
 
-  if (item.height >= 4) {
-    // Message "Big Pokemon"" for height >= 4 
-    document.write(`" WOW - ${item.name} - You are so big !!! " <br>`);
-    // Message "Sweet Pokemon"" for height <= 1.4  
-   } else if (item.height <= 1.4) {
-    document.write(`" Ooooh - ${item.name} - You are so sweet !!! " <br>`);
-   }
-}
-// pokemonRepository.getAll().forEach(pokemonOutput);
 
 // *************************  check add () function  ****************************************
 
-pokemonRepository.add (
-  {
-    ranking: 1022,
-    name: 'Iron Boulder',
-    height: 1.5,
-    types: ['Rock', 'Psychic']
-  }
-);
-pokemonRepository.add(23);
+// pokemonRepository.add (
+//   {
+//     ranking: 1022,
+//     name: 'Iron Boulder',
+//     height: 1.5,
+//     types: ['Rock', 'Psychic']
+//   }
+// );
+// pokemonRepository.add(23);
 
-pokemonRepository.getAll().forEach(pokemonOutput);
+// pokemonRepository.getAll().forEach(pokemonRepository.addListItem);
+
+// *******************************************************************************************
