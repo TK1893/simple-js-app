@@ -1,147 +1,172 @@
 * {
-Margin:0
-}
-body {
+    margin: 0;
+  }
+  
+  body {
     display: block;
     text-align: center;
-    background-color:#FFCB08;
+    background-color: #ffcb08;
     font-family: "Barriecito", system-ui;
-    font-size: 1.2rem;
-    color: #004A94;
-    line-height: 1.5;
-}
-
-.pokemonLogo {
+    color: #004a94;
+  }
+  /*****************************************************************************************
+      **  Header **                                                      ** Header **
+  **************************************************************************************** */
+  
+  header {
+    margin: 1vh 0;
+    width: 100vw;
+    background-color: #ffcb08;
+  }
+  
+  .pokemonLogo {
     width: 95vw;
-}
-main h1 {
+  }
+  
+  /*****************************************************************************************
+      **  MAIN **                                                      ** MAIN **
+  **************************************************************************************** */
+  
+  .heading-container {
+    width: 100vw;
+    background-color: #004a94;
+    margin-bottom: 2vh;
+  }
+  
+  h1 {
     font-family: "Barriecito", system-ui;
-    color:#FFCB08;
-    font-size: 2.2rem;
-    padding: 2vh 0;
-}
-
-main {
-    background-color: #004A94;
-    margin-bottom: 4vh;
-}
-
-
-header {
-    width: 100vw;;
-    background-color:#FFCB08;
-}
-
-
-@media only all and (min-width: 500px) {
+    color: #ffcb08;
+    font-size: 2rem;
+    padding: 3vh 0;
+  }
+  
+  /* blau  #004A94 */
+  /* gelb  #FFCB08 */
+  .poke-Button {
+    width: 150px;
+    height: 100px;
+    background-color: #004a94;
+    border: none;
+    border-radius: 5%;
+    color: #ffcb08;
+    font-family: "Barriecito", system-ui;
+    font-size: 1.5rem;
+    margin: 3vh;
+    cursor: pointer;
+    transition: scale 1s ease;
+  }
+  
+  .poke-Button:hover {
+    scale: 1.5;
+  }
+  
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  @media only all and (min-width: 500px) {
     .pokemonLogo {
-        width: 60vw;
+      width: 80vw;
     }
-    body {
-        font-size: 2rem;
-    }
+  }
+  
+  @media only all and (min-width: 768px) {
     main h1 {
-        font-size: 3rem;
+      font-size: 3rem;
     }
-}
-
-@media only all and (min-width: 768px) {
+  
+    .poke-Button {
+      width: 240px;
+      height: 180px;
+      font-size: 2.5rem;
+      margin: 4vh;
+  
+    }
+  }
+  
+  @media only all and (min-width: 1200px) {
+    .heading-container {
+      margin-bottom: 6vh;
+    }
+  
     .pokemonLogo {
-        width: 65vw;
+      width: 60vw;
     }
-
-    body {
-        font-size: 2.5rem;
-        line-height: 1.7;
-    }
+  
     main h1 {
-        font-size: 4rem;
+      font-size: 5rem;
     }
+  
+    .poke-Button {
+      width: 300px;
+      height: 200px;
+      font-size: 3rem;
+      margin: 4vh;
+  
+    }
+  }
+  
+  @media only all and (min-width: 2000px) {
+      .heading-container {
+          margin-bottom: 5vh;
+        }
     
-}
-
-@media only all and (min-width: 1200px) {
-
-    body {
-        font-size: 3.5rem;
+      .pokemonLogo {
+      width: 60vw;
     }
+  
     main h1 {
-        font-size: 5rem;
+      font-size: 6rem;
     }
-    
-    @media only all and (min-width: 2000px) {
-        .pokemonLogo {
-            width: 50vw;
-        }
-        body {
-            font-size: 6rem;
-        }
-        main h1 {
-            font-size: 8rem;
-        }
+  
+    .poke-Button {
+      width: 450px;
+      height: 300px;
+      font-size: 5rem;
     }
-}
-
-.page-footer {
+  }
+  
+  /*****************************************************************************************
+      -- FOOTER --                                                      -- FOOTER --
+  **************************************************************************************** */
+  .page-footer {
     margin: 3vh 0 0;
-    padding: 50px 10px 20px;
+    padding: 30px 10px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-}
-
-.trenner {
-    margin: 2vh 0;
-    border: 1px solid #004A94;
-}
-.social-media p {
-font-size: 1.2rem;
-margin-bottom: 1vh;
-color:#004A94;
-}
-
-.social-media__item {
-text-decoration: none;
-text-align: center;
-padding: 0 3vw;
-}
-    
-.social-media__image {
-width: 30px;
-transition: scale 1s ease;
-
-}
-
-.social-media__image:hover {
-scale: 1.7;
-}
-
-@media all and (max-width: 700px) {
-.page-footer {
-    margin-top: 0;
-}
-}
-
-ul {
-    padding-left:0;
-    list-style: none;
-}
-/* blau  #004A94 */
-/* gelb  #FFCB08 */
-.poke-Button {
-    background-color: #004A94; 
-    border: none;
-    border-radius: 5%;
-    color: #FFCB08;
-    font-family: "Barriecito", system-ui;
-    font-size: 1.5rem;
-    padding: 7px 10px;
-    margin:10px;
-    cursor: pointer;
+  }
+  
+  .trenner {
+    margin-bottom: 15px;
+    border: 1px solid #004a94;
+  }
+  .social-media p {
+    /* font-size: 1.2rem; */
+    margin-bottom: 20px;
+    color: #004a94;
+  }
+  
+  .social-media__item {
+    text-decoration: none;
+    text-align: center;
+    padding: 0 3vw;
+  }
+  
+  .social-media__image {
+    width: 30px;
     transition: scale 1s ease;
-}
-
-.poke-Button:hover {
-    scale: 1.5;
-}
+  }
+  
+  .social-media__image:hover {
+    scale: 1.7;
+  }
+  
+  @media all and (max-width: 700px) {
+    .page-footer {
+      margin-top: 0;
+    }
+  }
+  
