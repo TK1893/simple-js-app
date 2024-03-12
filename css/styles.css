@@ -1,172 +1,247 @@
 * {
-    margin: 0;
-  }
-  
-  body {
-    display: block;
-    text-align: center;
-    background-color: #ffcb08;
-    font-family: "Barriecito", system-ui;
-    color: #004a94;
-  }
-  /*****************************************************************************************
+  margin: 0;
+}
+
+body {
+  display: block;
+  text-align: center;
+  background-color: #ffcb08;
+  font-family: "Barriecito", system-ui;
+  color: #004a94;
+}
+/*****************************************************************************************
       **  Header **                                                      ** Header **
   **************************************************************************************** */
-  
-  header {
-    margin: 1vh 0;
-    width: 100vw;
-    background-color: #ffcb08;
-  }
-  
-  .pokemonLogo {
-    width: 95vw;
-  }
-  
-  /*****************************************************************************************
+
+header {
+  margin: 1vh 0;
+  width: 100vw;
+  background-color: #ffcb08;
+}
+
+.pokemonLogo {
+  width: 95vw;
+}
+
+/*****************************************************************************************
       **  MAIN **                                                      ** MAIN **
   **************************************************************************************** */
-  
-  .heading-container {
-    width: 100vw;
-    background-color: #004a94;
-    margin-bottom: 2vh;
+
+.heading-container {
+  width: 100vw;
+  background-color: #004a94;
+  margin-bottom: 2vh;
+}
+
+h1 {
+  font-family: "Barriecito", system-ui;
+  color: #ffcb08;
+  font-size: 2rem;
+  padding: 3vh 0;
+}
+
+/* blau  #004A94 */
+/* gelb  #FFCB08 */
+.poke-Button {
+  width: 150px;
+  height: 100px;
+  background-color: #004a94;
+  border: none;
+  border-radius: 5%;
+  color: #ffcb08;
+  font-family: "Barriecito", system-ui;
+  font-size: 1.5rem;
+  margin: 3vh;
+  cursor: pointer;
+  transition: scale 1s ease;
+}
+
+.poke-Button:hover {
+  scale: 1.5;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+@media only all and (min-width: 500px) {
+  .pokemonLogo {
+    width: 80vw;
   }
-  
-  h1 {
-    font-family: "Barriecito", system-ui;
-    color: #ffcb08;
-    font-size: 2rem;
-    padding: 3vh 0;
+}
+
+@media only all and (min-width: 768px) {
+  main h1 {
+    font-size: 3rem;
   }
-  
-  /* blau  #004A94 */
-  /* gelb  #FFCB08 */
+
   .poke-Button {
-    width: 150px;
-    height: 100px;
-    background-color: #004a94;
-    border: none;
-    border-radius: 5%;
-    color: #ffcb08;
-    font-family: "Barriecito", system-ui;
-    font-size: 1.5rem;
-    margin: 3vh;
-    cursor: pointer;
-    transition: scale 1s ease;
+    width: 240px;
+    height: 180px;
+    font-size: 2.5rem;
+    margin: 4vh;
   }
-  
-  .poke-Button:hover {
-    scale: 1.5;
+}
+
+@media only all and (min-width: 1200px) {
+  .heading-container {
+    margin-bottom: 6vh;
   }
-  
-  ul {
-    padding-left: 0;
-    list-style: none;
+
+  .pokemonLogo {
+    width: 60vw;
   }
-  
-  @media only all and (min-width: 500px) {
-    .pokemonLogo {
-      width: 80vw;
-    }
+
+  main h1 {
+    font-size: 5rem;
   }
-  
-  @media only all and (min-width: 768px) {
-    main h1 {
-      font-size: 3rem;
-    }
-  
-    .poke-Button {
-      width: 240px;
-      height: 180px;
-      font-size: 2.5rem;
-      margin: 4vh;
-  
-    }
+
+  .poke-Button {
+    width: 300px;
+    height: 200px;
+    font-size: 3rem;
+    margin: 4vh;
   }
-  
-  @media only all and (min-width: 1200px) {
-    .heading-container {
-      margin-bottom: 6vh;
-    }
-  
-    .pokemonLogo {
-      width: 60vw;
-    }
-  
-    main h1 {
-      font-size: 5rem;
-    }
-  
-    .poke-Button {
-      width: 300px;
-      height: 200px;
-      font-size: 3rem;
-      margin: 4vh;
-  
-    }
+}
+
+@media only all and (min-width: 2000px) {
+  .heading-container {
+    margin-bottom: 5vh;
   }
-  
-  @media only all and (min-width: 2000px) {
-      .heading-container {
-          margin-bottom: 5vh;
-        }
-    
-      .pokemonLogo {
-      width: 60vw;
-    }
-  
-    main h1 {
-      font-size: 6rem;
-    }
-  
-    .poke-Button {
-      width: 450px;
-      height: 300px;
-      font-size: 5rem;
-    }
+
+  .pokemonLogo {
+    width: 60vw;
   }
-  
-  /*****************************************************************************************
+
+  main h1 {
+    font-size: 6rem;
+  }
+
+  .poke-Button {
+    width: 450px;
+    height: 300px;
+    font-size: 5rem;
+  }
+}
+
+/*****************************************************************************************
+      -- MODAL --                                                      -- MODAL --
+  **************************************************************************************** */
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  /* to show it above other content */
+  z-index: 999;
+
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto;
+
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: #ffcb08;
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  /* background: #fff; */
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.modal-close {
+  font-family:"Barriecito", system-ui;
+  float: right;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: rgba(255, 203, 8,0.9);
+  text-decoration: underline;
+  font-size: larger;
+}
+
+.modal h1 {
+  background-color: #004a94;
+  margin-top: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+
+}
+
+.modal p {
+  padding: 10px;
+  margin-top: 30px;
+  background-color: #004a94;
+  color: #ffcb08;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.7rem;
+
+}
+
+.modal img {
+  padding-top: 10px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/*****************************************************************************************
       -- FOOTER --                                                      -- FOOTER --
   **************************************************************************************** */
+.page-footer {
+  margin: 3vh 0 0;
+  padding: 30px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.trenner {
+  margin-bottom: 15px;
+  border: 1px solid #004a94;
+}
+.social-media p {
+  /* font-size: 1.2rem; */
+  margin-bottom: 20px;
+  color: #004a94;
+}
+
+.social-media__item {
+  text-decoration: none;
+  text-align: center;
+  padding: 0 3vw;
+}
+
+.social-media__image {
+  width: 30px;
+  transition: scale 1s ease;
+}
+
+.social-media__image:hover {
+  scale: 1.7;
+}
+
+@media all and (max-width: 700px) {
   .page-footer {
-    margin: 3vh 0 0;
-    padding: 30px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
+    margin-top: 0;
   }
-  
-  .trenner {
-    margin-bottom: 15px;
-    border: 1px solid #004a94;
-  }
-  .social-media p {
-    /* font-size: 1.2rem; */
-    margin-bottom: 20px;
-    color: #004a94;
-  }
-  
-  .social-media__item {
-    text-decoration: none;
-    text-align: center;
-    padding: 0 3vw;
-  }
-  
-  .social-media__image {
-    width: 30px;
-    transition: scale 1s ease;
-  }
-  
-  .social-media__image:hover {
-    scale: 1.7;
-  }
-  
-  @media all and (max-width: 700px) {
-    .page-footer {
-      margin-top: 0;
-    }
-  }
-  
+}
