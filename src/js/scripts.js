@@ -1,16 +1,16 @@
 //    IIFE Wrapping    *****************************************************************************************
 let pokemonRepository = (function () {
   let pokemonList = []; // Create Blank Array
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //  Assignment of API-Url to a variable
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'; //  Assignment of API-Url to a variable
 
   // *************************************************************************************************************
   //      ADDING Pokémon in array   >   add()
   // *************************************************************************************************************
   function add(pokemon) {
-    if (typeof pokemon === "object" && "name" in pokemon) {
+    if (typeof pokemon === 'object' && 'name' in pokemon) {
       pokemonList.push(pokemon);
     } else {
-      console.error("Invalid Pokémon !!!");
+      console.error('Invalid Pokémon !!!');
     }
   }
 
@@ -26,16 +26,16 @@ let pokemonRepository = (function () {
   // *************************************************************************************************************
 
   function addListItem(pokemon) {
-    let pokeList = document.querySelector(".pokemon-list");
+    let pokeList = document.querySelector('.pokemon-list');
 
-    let listItem = document.createElement("li");
+    let listItem = document.createElement('li');
 
-    let button = document.createElement("button");
+    let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add("btn-primary", "btn-block", "mb-3", "list-group-item");
+    button.classList.add('btn-primary', 'btn-block', 'mb-3', 'list-group-item');
 
-    button.setAttribute("data-target", "#exampleModal");
-    button.setAttribute("data-toggle", "modal");
+    button.setAttribute('data-target', '#exampleModal');
+    button.setAttribute('data-toggle', 'modal');
 
     listItem.appendChild(button);
     pokeList.appendChild(listItem);
@@ -44,7 +44,7 @@ let pokemonRepository = (function () {
   }
 
   function addEventListenertoButton(button, pokemon) {
-    button.addEventListener("click", function () {
+    button.addEventListener('click', function () {
       showDetails(pokemon);
     });
   }
@@ -96,7 +96,7 @@ let pokemonRepository = (function () {
   }
 
   // MODAL
-  let modal = document.querySelector(".modal");
+  //let modal = document.querySelector(".modal");
 
   // *************************************************************************************************************
   //     showDetails()
@@ -112,46 +112,46 @@ let pokemonRepository = (function () {
   //     MODAL  > showModal()
   // *************************************************************************************************************
   function showModal(pokemon) {
-    let modalBody = document.querySelector(".modal-body");
-    let modalHeader = document.querySelector(".modal-header");
-    let modalTitle = document.querySelector(".modal-title");
-    let closeButtonElement = document.querySelector(".close");
-    modalBody.innerHTML = "";
+    let modalBody = document.querySelector('.modal-body');
+    //let modalHeader = document.querySelector(".modal-header");
+    let modalTitle = document.querySelector('.modal-title');
+    //let closeButtonElement = document.querySelector(".close");
+    modalBody.innerHTML = '';
     // TITLE
     modalTitle.innerText = pokemon.name;
 
     // FRONT IMAGE
-    let imageElement1 = document.createElement("img");
-    imageElement1.classList.add("modal-img1");
+    let imageElement1 = document.createElement('img');
+    imageElement1.classList.add('modal-img1');
     imageElement1.src = pokemon.imageUrl;
-    imageElement1.alt = " Front image of" + pokemon.name;
-    imageElement1.width = "200";
+    imageElement1.alt = ' Front image of' + pokemon.name;
+    imageElement1.width = '200';
     // BACK IMAGE
-    let imageElement2 = document.createElement("img");
-    imageElement2.classList.add("modal-img2");
+    let imageElement2 = document.createElement('img');
+    imageElement2.classList.add('modal-img2');
     imageElement2.src = pokemon.imageBack;
-    imageElement2.alt = "Back image of" + pokemon.name;
-    imageElement2.width = "200";
+    imageElement2.alt = 'Back image of' + pokemon.name;
+    imageElement2.width = '200';
     // TYPES
-    let typesElement = document.createElement("p");
+    let typesElement = document.createElement('p');
     let types = [pokemon.types[0].type.name];
     for (let i = 1; i < pokemon.types.length; i++) {
-      types.push(", " + pokemon.types[i].type.name);
+      types.push(', ' + pokemon.types[i].type.name);
     }
-    typesElement.innerHTML = "Types: <br>" + types.join("");
+    typesElement.innerHTML = 'Types: <br>' + types.join('');
     // HEIGHT
-    let heightElement = document.createElement("p");
+    let heightElement = document.createElement('p');
     heightElement.innerHTML = `height: <br> ${pokemon.height / 10} m `;
     // WEIGHT
-    let weightElement = document.createElement("p");
+    let weightElement = document.createElement('p');
     weightElement.innerHTML = `weight: <br> ${pokemon.weight / 10} kg `;
     // ABILITIES
-    let abilities = document.createElement("p");
+    let abilities = document.createElement('p');
     let abilitiesList = [pokemon.abilities[0].ability.name];
     for (let i = 1; i < pokemon.abilities.length; i++) {
-      abilitiesList.push(", " + pokemon.abilities[i].ability.name);
+      abilitiesList.push(', ' + pokemon.abilities[i].ability.name);
     }
-    abilities.innerHTML = "Abilities: <br>" + abilitiesList.join("");
+    abilities.innerHTML = 'Abilities: <br>' + abilitiesList.join('');
 
     // APPEND MODAL CONTENT TO MODAL
     modalBody.appendChild(imageElement1);

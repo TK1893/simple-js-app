@@ -1,0 +1,15 @@
+{
+  "name": "simple-js-app",
+  "version": "0.1.0",
+  "description": "My Pokéhome App is a compact web application with a collection of Pokémons.\r Each Pokémon is represented by a button.\r By clicking the button, images and key characteristics of the respective Pokémon are displayed in a modal. Images and data of the Pokémon are fetched from an external API.\r I used the following technologies to develop the app:",
+  "scripts": {
+    "lint": "eslint src/js/scripts.js"
+  },
+  "author": "Tobias Kraft",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
+  }
+}
