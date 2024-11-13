@@ -2,9 +2,15 @@
 
 A simple, interactive Pokédex web application built with HTML, CSS, and JavaScript that allows users to browse Pokémon data and view detailed information. This project uses data from an external Pokémon API to provide a dynamic experience and implements clean, user-friendly design elements.
 
-## Please check out the Pokedex Live App ...
+---
 
-### [Pokedex Live App](https://tk1893.github.io/simple-js-app/)
+## Link to Live App
+
+Please check out the Pokédex Live App:
+
+### [Pokédex Live App](https://tk1893.github.io/simple-js-app/)
+
+---
 
 ## Table of Contents
 
