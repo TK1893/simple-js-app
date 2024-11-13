@@ -2,6 +2,10 @@
 
 A simple, interactive Pokédex web application built with HTML, CSS, and JavaScript that allows users to browse Pokémon data and view detailed information. This project uses data from an external Pokémon API to provide a dynamic experience and implements clean, user-friendly design elements.
 
+## Please check out the Pokedex Live App ...
+
+### [Pokedex Live App](https://tk1893.github.io/simple-js-app/)
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -60,7 +64,7 @@ The Pokédex JavaScript App is a simple js application where users can view a li
 - #### `Pokémon API`
   RESTful [Pokémon API](https://pokeapi.co/) is used to fetch Pokémon data and details
 - #### `Google Fonts`
-  Custom font (Barriecito) from Google Fonts
+  Custom font (Barriecito, Roboto) from Google Fonts
 - #### `Icons`
   GitHub, Twitter, and LinkedIn social media icons for footer
 
