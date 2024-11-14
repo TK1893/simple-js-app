@@ -22,6 +22,7 @@ Please check out the Pokédex Live App:
 - [Project Structure](#project-structure)
 - [Roadmap](#roadmap)
 - [License](#license)
+- [Author](#author)
 
 ---
 
@@ -124,4 +125,3 @@ This project is open-source under the MIT License.
 ## Author
 
 Developed by [Tobias Kraft](https://tk1893.github.io/tk-portfolio/).
-
